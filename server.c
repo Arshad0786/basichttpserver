@@ -3,7 +3,7 @@
 #include <string.h>   /*  string library */
 #include <winsock2.h> /*  socket definitions */
 
-#define MYPORT 12345
+#define MYPORT 1024
 #define BACKLOG 5
 int main(int argc, char *argv[])
 {
@@ -104,8 +104,10 @@ int main(int argc, char *argv[])
         }
         else{
             strcat(sndbuffer,"404 not found.");
-            printf("sendbuffer : \n%s", sndbuffer);
+            printf("sendbuffer : \n%s", sndbufferpointer);
         }
+        printf("\n\n");
+        printf("---------------------------------------------------------------\n");
         int count;
         if (send(new_fd, sndbufferpointer, strlen(sndbufferpointer), 0) == -1)
             perror("send");
